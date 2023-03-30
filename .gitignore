@@ -10,7 +10,6 @@ lerna-debug.log*
 node_modules
 dist
 .env
-vercel.json
 dist-ssr
 *.local
 

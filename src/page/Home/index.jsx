@@ -21,7 +21,7 @@ export default function index() {
   if (status === "loading") {
     return (
       <div className="loader">
-        <div class="spinner"></div>
+        <div className="spinner"></div>
       </div>
     );
   }

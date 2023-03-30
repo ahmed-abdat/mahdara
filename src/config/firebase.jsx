@@ -4,7 +4,7 @@ import { getFirestore } from "@firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "mahdara-e8299.firebaseapp.com",
   projectId: "mahdara-e8299",
   storageBucket: "mahdara-e8299.appspot.com",
@@ -13,7 +13,7 @@ const firebaseConfig = {
   measurementId: "G-NFHNGNZH9Z",
 };
 
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = import.meta.env;
 
 console.log(apiKey);
 

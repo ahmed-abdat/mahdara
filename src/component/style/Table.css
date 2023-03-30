@@ -1,0 +1,77 @@
+.MuiTableContainer-root {
+  padding: 1rem;
+  max-height: calc(100vh - 218px);
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .MuiTableContainer-root {
+    width: 260vw !important;
+  }
+}
+
+
+.table-head .MuiTableCell-head {
+  font-family: 'Amiri';
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+
+.paid {
+  color: #27ae60 !important;
+  /* padding: 4px 6px; */
+}
+
+.unpaide {
+  color: #c0392b !important;
+}
+
+
+
+
+
+
+
+
+.icon-cell {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--tran-04);
+  -webkit-transition: var(--tran-04);
+  -moz-transition: var(--tran-04);
+  -ms-transition: var(--tran-04);
+  -o-transition: var(--tran-04);
+}
+
+.view {
+  color: #1abc9c; /* turquoise */
+}
+
+.check {
+  color: #27ae60; /* emerald */
+}
+
+.edit {
+  color: #2980b9; /* belize hole */
+}
+
+.delete {
+  color: #c0392b; /* pomegranate */
+}
+
+
+.table-head {
+  background-color: var(--gray-color);
+}
+
+.MuiTableCell-root.table-row {
+  font-size: 1rem;
+  font-family: 'Amiri' , sans-serif;
+  font-weight: 500;
+}
+
+/* .table.MuiTableContainer-root , .MuiPaper-root.table {
+  margin-inline: 1rem !important; 
+  background-color: red;
+} */

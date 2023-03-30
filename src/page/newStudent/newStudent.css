@@ -1,0 +1,212 @@
+main.newStudent {
+  background-color: var(--white-color);
+  padding: 0;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newStudent form {
+  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+  padding-inline: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem 0;
+  background-color: #fff;
+  width: 500px;
+  min-width: 500px;
+  max-height: calc(100vh - 0px);
+  box-shadow: 0 0 8px 1.5px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.newStudent form .header {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  /* margin-bottom: 0.5rem; */
+  color: #444;
+}
+
+.newStudent form .input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem 0;
+}
+
+.newStudent form .input label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.newStudent form .input input {
+  height: 2.4rem;
+  padding-inline: 1rem;
+  outline: none;
+  border: none;
+  border: 1px solid #e5e7eb;
+  color: #333;
+  font-size: 1.18rem;
+  font-weight: 500;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.newStudent form .input.name input {
+  font-size: 1.1rem;
+  font-family: "Amiri", sans-serif;
+}
+.newStudent form .input.phone input::placeholder {
+  font-size: 1.05rem;
+  font-family: "Amiri", sans-serif;
+}
+
+.newStudent form .input.phone input,
+.newStudent form .input.time input {
+  font-family: "Roboto", sans-serif;
+}
+
+.newStudent form .category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem 0;
+}
+
+.newStudent .btnes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.newStudent .btnes button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  transition: var(--tran-04);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transition: var(--tran-04);
+  -moz-transition: var(--tran-04);
+  -ms-transition: var(--tran-04);
+  -o-transition: var(--tran-04);
+}
+
+.newStudent button.cancel {
+  background-color: transparent;
+  font-size: 1.25rem;
+  color: var(--text-color);
+}
+
+.newStudent .cancel:hover {
+  color: #444;
+}
+
+.newStudent button.send {
+  background: var(--primary-color);
+  color: var(--white-color-light);
+}
+
+.newStudent button.send:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ? price */
+
+.newStudent .input .price {
+  padding-inline: 1rem;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.newStudent .input .price .unit {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.newStudent .input .price input {
+  border: none;
+}
+
+/* ? id */
+
+.newStudent .id,
+.newStudent .dated {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.newStudent .id #checkID,
+.newStudent .dated #checkDates {
+  width: 1.25rem;
+}
+
+.newStudent .id #inputID,
+.newStudent .dated #inputDates {
+  text-align: center;
+}
+
+/* ? not-valid */
+
+.newStudent .not-valid #inputID {
+  border-color: var(--delete-color);
+}
+
+.newStudent .error-msg {
+  color: var(--delete-color);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding-right: 4rem;
+}
+
+.newStudent .offline {
+  text-align: center;
+}
+
+
+
+/* ? media query */
+
+@media screen and (max-width: 768px) {
+  .newStudent  .form {
+    position: absolute;
+    inset: 0 0 0 0;
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 85%;
+  }
+  .newStudent form {
+    max-height: 100vh;
+    padding-inline: 1rem;
+    width: 92%;
+    max-width: 98%;
+    min-width: 85%;
+  }
+
+  .newStudent form .input .id input , .newStudent form .input.time input{
+    width: 55%;
+  }
+}

@@ -1,0 +1,99 @@
+/* Tajawal */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+/* Roboto  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Arial */
+@font-face {
+  font-family: "Arial" ;
+  src: url('./assets/font/alfont_com_arial-1.ttf');
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* color */
+  --white-color: #fff;
+  --primary-color: #5547e7;
+  --primary-hover: #7269f7;
+  --white-color-light: #f6f5ff;
+  --gray-color : #eee;
+  --dark-white-color: #ddd;
+  --text-color: #707070;
+  --header-color : #333;
+  --delete-color : #DD2626;
+  --delete-hover : #c52121;
+  /* transition */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+body {
+  background-color: var(--white-color-light);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: 'Amiri' , sans-serif;
+}
+
+h1  {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.55rem;
+  margin-bottom: 0.6rem;
+}
+
+
+
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  transition: var(--tran-04);
+  -webkit-transition: var(--tran-04);
+  -moz-transition: var(--tran-04);
+  -ms-transition: var(--tran-04);
+  -o-transition: var(--tran-04);
+}
+
+/* dark Mode */
+
+.App.dark {
+    /* color */
+    --white-color: #18191A;
+    --primary-color: #2534cf;
+    --primary-hover: #0716ba;
+    --white-color-light: #3a3b3c;
+    --dark-white-color: #ddd;
+    --text-color: #707070;
+    --delete-color : #DD2626;
+}
+
+/* custom class */
+.hide {
+  display: none !important;
+}
+.full-w {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.p-initial {
+  position: static ;
+}
+
+@media screen and (max-width: 767px) {
+  .sm-p-initial {
+    position: static;
+  }
+  
+}

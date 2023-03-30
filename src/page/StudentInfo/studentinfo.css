@@ -1,0 +1,163 @@
+.container--studentInfo {
+  min-height: calc(100vh - 300px);
+  padding: 1rem;
+  /* background: var(--white-color-light); */
+  min-width: 80%;
+}
+
+.container--studentInfo .title h3 {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.container--studentInfo .info {
+  align-items: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem 0;
+}
+
+.container--studentInfo .info p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.container--studentInfo .info p span {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* ? btns */
+.container--studentInfo .btns {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 1rem;
+}
+
+.container--studentInfo .btns button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.65rem 1.15rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.container--studentInfo .btns button.pay {
+  background-color: #60b515;
+  color: var(--white-color-light);
+  transition: var(--tran-04);
+  -webkit-transition: var(--tran-04);
+  -moz-transition: var(--tran-04);
+  -ms-transition: var(--tran-04);
+  -o-transition: var(--tran-04);
+}
+
+.container--studentInfo .btns button.pay:hover {
+  background-color: #2e8b57;
+}
+
+.container--studentInfo .btns button.edit {
+  color: var(--white-color-light);
+  background-color: var(--primary-color);
+  transition: var(--tran-04);
+  -webkit-transition: var(--tran-04);
+  -moz-transition: var(--tran-04);
+  -ms-transition: var(--tran-04);
+  -o-transition: var(--tran-04);
+}
+
+.container--studentInfo .btns button.edit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ? pays popup */
+.container--studentInfo .wrapper {
+  position: absolute;
+  inset: 0 0 0 0;
+  top: -44px;
+  width: 100vw;
+  background-color: #fff;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.container--studentInfo .wrapper .pays {
+  background: #fff;
+  min-width: 35%;
+  padding: 1.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 8px 1.5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container--studentInfo .wrapper .title h3 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+}
+
+.container--studentInfo .wrapper .info p {
+  font-size: 1.15rem;
+}
+
+.container--studentInfo .wrapper .time {
+  min-width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+.container--studentInfo .wrapper .time .months {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.container--studentInfo .wrapper .time .months .css-b62m3t-container {
+  width: 70%;
+}
+
+.container--studentInfo .wrapper .btns {
+    padding: 2rem 1rem 0.5rem;
+}
+
+.container--studentInfo .wrapper .btns button.cancel {
+    font-size: 1.15rem;
+}
+
+/* ? media query  */
+
+@media screen and (max-width: 768px) {
+  .container--studentInfo .wrapper {
+    top: -44px;
+    width: 100vw;
+  }
+  .container--studentInfo .wrapper .pays {
+    min-width: 60%;
+    width: 94%;
+    max-width: 98%;
+    padding: 1.5rem 0.5rem;
+  }
+  .container--studentInfo .wrapper .time .months .css-b62m3t-container {
+    width: 75%;
+  }
+}

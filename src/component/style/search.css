@@ -1,0 +1,242 @@
+/* main */
+main {
+  overflow: hidden;
+  padding: 1rem;
+  min-height: calc(100vh - 50px);
+  background-color: var(--white-color);
+  font-family: "Amiri", sans-serif;
+  position: relative;
+  top: 49px;
+  left: -250px;
+  width: calc(100% - 250px);
+  transition: var(--tran-03);
+  -webkit-transition: var(--tran-03);
+  -moz-transition: var(--tran-03);
+  -ms-transition: var(--tran-03);
+  -o-transition: var(--tran-03);
+}
+
+main.close {
+    left: -75px;
+    width: calc(100% - 75px);
+}
+
+
+main .btn:hover {
+  background-color: #1f2dc6;
+}
+
+main::-webkit-scrollbar {
+  width: 0;
+}
+/* ? no table */
+
+.offline {
+  color: #e74c3c ;
+}
+
+.no-table {
+  margin: 5rem auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem 0;
+}
+
+
+
+.no-table h3 span:last-child {
+  font-weight: 500;
+}
+
+.no-table h3 span:first-child {
+  font-weight: inherit;
+  margin-left: 0.5rem;
+}
+
+.no-table h3 {
+  font-size: 1.45rem;
+}
+.no-table p {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+/* search block */
+
+main .search {
+  position: relative;
+  z-index: 10;
+  margin-top: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: minmax(790px , 850px) minmax(285px, 300px);
+  justify-content: space-between;
+  gap: 0 1rem;
+  padding: 2rem 1rem;
+  padding-inline: 0;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+
+
+
+/* ? search--input */
+
+.search--input {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.search--input .input {
+  min-width: 18rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.7rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.search--input input {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #222;
+  font-size: 1rem;
+  padding: 0.6rem;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.search--input .search-icon {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--tran-04);
+  -webkit-transition: var(--tran-04);
+  -moz-transition: var(--tran-04);
+  -ms-transition: var(--tran-04);
+  -o-transition: var(--tran-04);
+}
+
+/* ? search btn */
+
+.search--btn {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.search--btn .add {
+  cursor: pointer;
+  padding: 0.55rem 1rem;
+  background-color: var(--primary-color);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 0.3rem;
+  color: var(--white-color-light);
+  transition: var(--tran-05);
+  -webkit-transition: var(--tran-05);
+  -moz-transition: var(--tran-05);
+  -ms-transition: var(--tran-05);
+  -o-transition: var(--tran-05);
+}
+
+.search--btn .add:hover {
+  background-color: var(--primary-hover);
+}
+
+.search--btn .add button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 1.15rem;
+}
+
+
+
+/* ? search category*/
+
+.search .search--category , .search--months , .search--status {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+}
+
+.search--category h4 , .search--months  h4 , .search--status h4{
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--header-color);
+}
+
+
+/* ? input icon */
+
+.input svg{
+  color: var(--text-color) !important;
+  transition: var(--tran-04);
+  -webkit-transition: var(--tran-04);
+  -moz-transition: var(--tran-04);
+  -ms-transition: var(--tran-04);
+  -o-transition: var(--tran-04);
+}
+
+
+.input svg:hover {
+  color: var(--primary-color) !important;
+}
+
+/* ? delete all */
+
+.search--btn .delete {
+  cursor: pointer;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 0.3rem;
+  padding: 0.55rem 1rem;
+  background-color: var(--delete-color);
+  color: var(--white-color-light);
+  transition: var(--tran-03);
+  -webkit-transition: var(--tran-03);
+  -moz-transition: var(--tran-03);
+  -ms-transition: var(--tran-03);
+  -o-transition: var(--tran-03);
+}
+
+.search--btn .delete:hover {
+  background-color: var(--delete-hover);
+}
+
+.search--btn .delete button {
+  cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: 1.1rem;
+}
+
+.search--btn .delete svg {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    overflow-x: auto;
+  }
+  .no-table {
+    width: 260vw;
+  }
+}

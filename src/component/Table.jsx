@@ -14,13 +14,13 @@ import { faEdit, faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser , UpdateStudentCurentIndex} from "../features/fireBase";
 import {  TableFooter, TablePagination, Typography } from "@mui/material";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 export default function BasicTable() {
   const { data  , filterData } = useSelector((state) => state.firebase);
-  const { currentMonth , startedMonth } = useSelector((state) => state.selecte);
+  const { currentMonth  } = useSelector((state) => state.selecte);
   
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -58,19 +58,35 @@ export default function BasicTable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(7);
 
-  const handleChangePage = ( newPage) => {
-    setPage(parseInt(newPage));
-  };
+const handleChangePage = (event, newPage) => {
+  setPage(Number(newPage));
+};
+
+const handleChangeRowsPerPage = (event) => {
+  setRowsPerPage(Number(event.target.value));
+};
+
   
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value));
-  };
 
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
 
     // ? handeling filter by input
 
+    // state
+    const [finalFilter , setFinalFilter] = useState(filterData)
+
+    const month = new Date().getMonth()
+
+    useMemo(()=> {
+      const newFilter =  filterData.filter(el => el.startedMonth <= currentMonth)
+      setFinalFilter(newFilter)
+      
+    }, [filterData])
+
+
+
+    
     
     
 
@@ -94,9 +110,9 @@ export default function BasicTable() {
 
         <TableBody>
           {(rowsPerPage > 0
-            ? filterData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            : filterData
-          ).filter(el => el.startedMonth <= currentMonth).map((row) => (
+            ? finalFilter.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            : finalFilter
+          ).map((row) => (
             <TableRow
               hover
               key={row.uid}
@@ -123,7 +139,7 @@ export default function BasicTable() {
                   row.months[currentYear][currentMonth]?.status  !== "لم يتم الدفع" ? "paid" : "unpaide"
                 }`}
               >
-                {row.months[currentYear][currentMonth]?.status }
+                { month === currentMonth ? '' : row.months[currentYear][currentMonth]?.status }
               </TableCell>
               <TableCell align="center">
                 <FontAwesomeIcon icon={faEye} className="icon-cell view" onClick={()=> handelStudentInfo(row.uid)}  />
@@ -150,7 +166,7 @@ export default function BasicTable() {
           <TablePagination
             rowsPerPageOptions={[5, 7, 15, { label: "الجميع", value: -1 }]}
             colSpan={3}
-            count={filterData.length}
+            count={finalFilter.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}

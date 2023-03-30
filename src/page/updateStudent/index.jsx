@@ -155,24 +155,14 @@ export default function newStudent() {
     if (isIdExist && connection) {
       updateStudent(isIdExist, studetnId, curentDate);
     }
-  };
+  }
+
+
 
   //   update student
   const updateStudent = async (validId, studetnId, curentDate) => {
     setIsUpdated(true);
-    console.log(studetnId );
-    console.log("#########");
-    console.log({
-      uid: parseInt(validId),
-      name,
-      phone,
-      price,
-      category,
-      timestamp: serverTimestamp(),
-      date: curentDate,
-      createdDate: new Date().getTime(), // add updated date field
-    });
-    try {
+       try {
       const studentsRef = doc(db, "students", studetnId);
       const dataStudents = {
         uid: parseInt(validId),

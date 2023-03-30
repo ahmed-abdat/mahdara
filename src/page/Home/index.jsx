@@ -11,7 +11,7 @@ import { fetchCategory } from "../../features/category";
 
 export default function index() {
   const dispatch = useDispatch();
-  const { status, error } = useSelector((state) => state.firebase);
+  const {status, error } = useSelector((state) => state.firebase);
 
   useEffect(() => {
     dispatch(fetchFirebaseData());

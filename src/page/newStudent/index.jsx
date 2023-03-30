@@ -141,6 +141,8 @@ export default function newStudent() {
         months,
         timestamp: serverTimestamp(),
         date,
+        startedMonth : new Date(date).getMonth(),
+        satrtedYear : new Date(date).getFullYear(),
         createdDate: new Date().getTime(),
       };
      
@@ -150,7 +152,7 @@ export default function newStudent() {
       setTimeout(() => {
         navigate("/");
         setIsUpdated(false);
-      }, 200);
+      }, 100);
     } catch (error) {
       setIsUpdated(false);
       console.error("Error adding document: ", error);

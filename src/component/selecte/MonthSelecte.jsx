@@ -4,7 +4,7 @@ import {setCurentMont} from '../../features/Selcte'
 
 export default function Selecte() {
 
-  const {allMonths ,currentMonth } = useSelector((state) => state.selecte);
+  const {allMonths ,currentMonth , startedMonth} = useSelector((state) => state.selecte);
   const dispatch = useDispatch()
 
 
@@ -19,7 +19,7 @@ export default function Selecte() {
 
 
 
-      const option = allMonths.slice(0, curetnMonthe).map((month) => ({
+      const option = allMonths.slice(startedMonth, curetnMonthe).map((month) => ({
         value: month,
         label: month,
       }));

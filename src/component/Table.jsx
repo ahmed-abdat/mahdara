@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function BasicTable() {
   const { data  , filterData } = useSelector((state) => state.firebase);
-  const { currentMonth } = useSelector((state) => state.selecte);
+  const { currentMonth , startedMonth } = useSelector((state) => state.selecte);
   
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -58,7 +58,7 @@ export default function BasicTable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(7);
 
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = ( newPage) => {
     setPage(parseInt(newPage));
   };
   
@@ -96,7 +96,7 @@ export default function BasicTable() {
           {(rowsPerPage > 0
             ? filterData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : filterData
-          ).map((row) => (
+          ).filter(el => el.startedMonth <= currentMonth).map((row) => (
             <TableRow
               hover
               key={row.uid}

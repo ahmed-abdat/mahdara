@@ -17,6 +17,7 @@ const initialState = {
     "ديسمبر",
   ],
   currentMonth: new Date().getMonth() ,
+  startedMonth : 0,
 
   currentCategory: { value: "", label: "الكل" },
   status: [

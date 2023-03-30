@@ -74,6 +74,8 @@ const handleChangeRowsPerPage = (event) => {
 
     const month = new Date().getMonth()
 
+    console.log(filterData);
+
 
 
     

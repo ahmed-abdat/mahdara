@@ -45,7 +45,7 @@ export default function Main() {
     });
 
     const filteredStudents =
-      input === "" ? filterByStatusAndCategory : filterByInput;
+      input === "" ? filterByStatusAndCategory.filter(el => el.startedMonth <= currentMonth) : filterByInput;
     setFilteredStudents(filteredStudents);
     setIsInputNumber(!isNaN(Number(input)));
   }, [data, input, currentStatus, currentCategory, currentMonth]);

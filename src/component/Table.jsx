@@ -14,7 +14,7 @@ import { faEdit, faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser , UpdateStudentCurentIndex} from "../features/fireBase";
 import {  TableFooter, TablePagination, Typography } from "@mui/material";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -26,7 +26,6 @@ export default function BasicTable() {
   const navigate = useNavigate()
 
   const currentYear = new Date().getFullYear()
-  // const currentYear = new Date().getFullYear()
 
   const handelUpdateStudent = (uid) => {
     dispatch(UpdateStudentCurentIndex(uid))
@@ -73,16 +72,7 @@ const handleChangeRowsPerPage = (event) => {
 
     // ? handeling filter by input
 
-    // state
-    const [finalFilter , setFinalFilter] = useState(filterData)
-
     const month = new Date().getMonth()
-
-    useMemo(()=> {
-      const newFilter =  filterData.filter(el => el.startedMonth <= currentMonth)
-      setFinalFilter(newFilter)
-      
-    }, [filterData])
 
 
 
@@ -110,8 +100,8 @@ const handleChangeRowsPerPage = (event) => {
 
         <TableBody>
           {(rowsPerPage > 0
-            ? finalFilter.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            : finalFilter
+            ? filterData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            : filterData
           ).map((row) => (
             <TableRow
               hover
@@ -166,7 +156,7 @@ const handleChangeRowsPerPage = (event) => {
           <TablePagination
             rowsPerPageOptions={[5, 7, 15, { label: "الجميع", value: -1 }]}
             colSpan={3}
-            count={finalFilter.length}
+            count={filterData.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}

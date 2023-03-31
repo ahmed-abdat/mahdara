@@ -74,18 +74,6 @@ const handleChangeRowsPerPage = (event) => {
 
     const month = new Date().getMonth()
 
-    console.log(filterData);
-
-    const randomNumber = 
-
-
-
-
-    
-    
-    
-
-
   return (
     <TableContainer component={Paper} dir="rtl" style={{ padding: 0 }}>
       <Table sx={{ minWidth: 450 }} aria-label="simple table">

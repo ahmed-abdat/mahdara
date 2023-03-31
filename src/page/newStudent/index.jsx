@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../config/firebase";
-import "./newStudent.css";
 import { useNavigate } from "react-router-dom";
 import { addUser } from "../../features/fireBase";
 import { updateConnectionStatus } from "../../features/fireBase";
+import "./newStudent.css";
 
 export default function newStudent() {
   const isclosed = useSelector((state) => state.close.value);

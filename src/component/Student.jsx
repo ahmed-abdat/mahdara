@@ -102,7 +102,7 @@ export default function Main() {
                 "
                 <span>
                   {input ||
-                    (currentCategory.value && currentStatus.label) ||
+                    currentStatus.label && currentCategory.value ? currentStatus.label : currentCategory.value ||
                     currentCategory.value ||
                     currentStatus.label}
                 </span>

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchFirebaseData } from "../../features/fireBase";
 import { fetchCategory } from "../../features/category";
+import Loader from "./Loader";
 
 export default function index() {
   const dispatch = useDispatch();
@@ -20,9 +21,7 @@ export default function index() {
 
   if (status === "loading") {
     return (
-      <div className="loader">
-        <div className="spinner"></div>
-      </div>
+     <Loader />
     );
   }
 

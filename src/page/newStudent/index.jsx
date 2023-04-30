@@ -149,10 +149,8 @@ export default function newStudent() {
       await addDoc(studentsRef, dataStudents);
 
       dispatch(addUser(dataStudents));
-      setTimeout(() => {
-        navigate("/");
-        setIsUpdated(false);
-      }, 100);
+      navigate("/");
+      setIsUpdated(false);
     } catch (error) {
       setIsUpdated(false);
       console.error("Error adding document: ", error);

@@ -89,7 +89,8 @@ const getPaidMonths = (student) => {
     for (let month = startMonth; month <= endMonth; month++) {
       if (!(year === currentYear && month === currentMonth)) {
         paidMonthNames.push(month);
-        totalPaid += +student.paidMonth[month - 1];
+        totalPaid += student.months[year][month - 1].amountPaid;
+        // totalPaid += +student?.paidMonth[month - 1];
       }
     }
   }

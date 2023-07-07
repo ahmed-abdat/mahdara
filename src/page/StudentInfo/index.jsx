@@ -71,6 +71,32 @@ export default function index() {
     }
   }, [curentStudentUpdateIndex , data]);
 
+  // get paided student Months
+const getPaidMonths = (student) => {
+  const paidMonthNames = [];
+  const registrationDate = new Date(student.date);
+  const registrationMonth = registrationDate.getMonth() + 1;
+  const registrationYear = registrationDate.getFullYear();
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentYear = currentDate.getFullYear();
+  let totalPaid = 0;
+
+  for (let year = registrationYear; year <= currentYear; year++) {
+    const startMonth = year === registrationYear ? registrationMonth : 1;
+    const endMonth = year === currentYear ? currentMonth : 12;
+
+    for (let month = startMonth; month <= endMonth; month++) {
+      if (!(year === currentYear && month === currentMonth)) {
+        paidMonthNames.push(month);
+        totalPaid += +student.paidMonth[month - 1];
+      }
+    }
+  }
+
+  return { paidMonthNames, totalPaid };
+}
+
 
 
   // how many month
@@ -182,10 +208,15 @@ export default function index() {
     function arraysAreEqual(arr1, arr2) {
       return JSON.stringify(arr1) === JSON.stringify(arr2);
     }
+
+    if(studente){
+      const {paidMonthNames , totalPaid} = getPaidMonths(studente)
+    }
     
 
     // ! handelPayment
     const handelPayment = async ()=> {
+      
       const updatedMonthse = {months :  {[selecteUnpaidYear.label] : studente.months[selecteUnpaidYear.label].map(month => {
         if (month.name === selcteUnpaidMonths?.label) {
           return { ...month, status: 'تم الدفع' , amountPaid : studente.price};
